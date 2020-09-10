@@ -9,6 +9,6 @@ public class JSON2XMLAdapter extends XMLDocument {
 
   @Override
   public String getXmlDocument() {
-    return json.getJsonDocument() + " converted to XML";
+    return "json " + json.getJsonDocument() + " converted to XML";
   }
 }
