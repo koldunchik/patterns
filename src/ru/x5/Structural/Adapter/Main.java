@@ -5,13 +5,15 @@ public class Main {
     XMLDocument xml = new XMLDocument();
     xml.setXmlDocument("<xml><item>1</item></xml>");
 
-    XMLDocumentReader.read(xml);
+    XMLDocumentReader xmlDocumentReader = new XMLDocumentReader();
+
+    xmlDocumentReader.read(xml);
 
     JSONDocument json = new JSONDocument();
     json.setJsonDocument("{item:2}");
 
     JSON2XMLAdapter adapter = new JSON2XMLAdapter(json);
 
-    XMLDocumentReader.read(adapter);
+    xmlDocumentReader.read(adapter);
   }
 }
