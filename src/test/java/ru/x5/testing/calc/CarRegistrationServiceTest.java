@@ -28,7 +28,7 @@ public class CarRegistrationServiceTest {
     }
 
     @Test(expected = RuntimeException.class)
-    public void testDeregisterThrowRuntimeExceptionWhenCarIsNull(){
+    public void testUnregisterThrowRuntimeExceptionWhenCarIsNull(){
         Mockito.doThrow(new RuntimeException()).when(repository).delete(null);
         service.unregister(null);
     }
@@ -38,7 +38,6 @@ public class CarRegistrationServiceTest {
         service.register("car");
         Mockito.verify(repository, Mockito.times(1)).insert("car");
     }
-
 
     @Test
     public void tesCreateCar(){
@@ -53,6 +52,7 @@ public class CarRegistrationServiceTest {
 
         mockList.add("one");
         Mockito.verify(mockList).add("one");
+
         assertEquals(0, mockList.size());
 
         Mockito.when(mockList.size()).thenReturn(100);
@@ -73,6 +73,7 @@ public class CarRegistrationServiceTest {
         assertEquals(2, spyList.size());
 
         Mockito.doReturn(100).when(spyList).size();
+
         assertEquals(100, spyList.size());
     }
 

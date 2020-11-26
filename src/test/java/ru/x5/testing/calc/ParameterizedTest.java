@@ -33,7 +33,7 @@ public class ParameterizedTest {
 
     //name attribute is optional, provide an unique name for test
     //multiple parameters, uses Collection<Object[]>
-    @Parameterized.Parameters(name = "{index}: testAdd({0}+{1}) = {2}")
+    @Parameterized.Parameters(name = "{index}: testSum({0}+{1}) = {2}")
     public static Collection<Object[]> data() {
         return Arrays.asList(new Object[][]{
                 {1, 1, 2},
