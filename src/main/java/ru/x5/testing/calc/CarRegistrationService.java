@@ -13,8 +13,13 @@ public class CarRegistrationService {
         repository.insert(car);
     }
 
-    public void deregister(String car){
+    public void unregister(String car){
         repository.delete(car);
     }
+
+    public void create(String car){
+        repository.create(car);
+    }
+
 
 }
